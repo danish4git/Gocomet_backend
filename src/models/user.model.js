@@ -8,9 +8,7 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     gender: { type: String, required: false, default: "Male" },
-    ip_address: [{ type: String, required: false }],
     age: { type: Number, required: true },
-    birth_date: { type: Date, required: true },
   },
   {
     versionKey: false,
@@ -18,18 +16,4 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-const User = mongoose.model("user", userSchema); // user => users
-
-const postSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  body: { type: String, required: true },
-  user_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "user",
-    required: true,
-  },
-});
-
-const Post = mongoose.model("post", postSchema); // user => users
-
-module.exports = User;
+module.exports = mongoose.model("User", userSchema);
