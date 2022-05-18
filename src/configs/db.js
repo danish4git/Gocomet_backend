@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
 
-module.exports = () => {
+const connect = () => {
   return mongoose.connect(
-    "mongodb+srv://danish:gocomet@cluster0.6jqej.mongodb.net/?retryWrites=true&w=majority/gocomet"
+    "mongodb+srv://danish:dummygocomet@cluster0.diyyv.mongodb.net/?retryWrites=true&w=majority"
   );
 };
+
+module.exports = connect;

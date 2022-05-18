@@ -5,6 +5,7 @@ const connect = require("./configs/db");
 const app = express();
 
 app.use(express.json());
+app.use("/user");
 
 app.listen(5454, async () => {
   try {
